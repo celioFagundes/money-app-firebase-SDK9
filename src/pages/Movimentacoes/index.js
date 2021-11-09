@@ -1,21 +1,22 @@
 import React, { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../../auth";
 import {
   useDatabase,
   useMovimentacoesPush,
   useDatabaseRemove,
   useUpdateMes,
 } from "../../database";
-import { AuthContext } from "../../auth";
 import InfoMes from "./InfoMes";
-import { Table, Button, Container, Row, Col } from "react-bootstrap";
 import AdicionarMovimentacao from "./AdicionarMovimentacao";
-import { Navigate ,useParams} from "react-router";
 import Time from "./Time";
+import { Navigate, useParams } from "react-router";
+import { Table, Button, Container, Row, Col } from "react-bootstrap";
+
 const Movimentacoes = () => {
   const auth = useContext(AuthContext);
   const [somaEntradas, setSomaEntradas] = useState(0);
   const [somaSaidas, setSomaSaidas] = useState(0);
-  const { id: mesId} = useParams()
+  const { id: mesId } = useParams();
   const movimentacoes = useDatabase("/movimentacoes/" + mesId);
 
   const [saveStatus, salvarMovimentacao] = useMovimentacoesPush(
@@ -80,23 +81,18 @@ const Movimentacoes = () => {
       </Row>
       <Table className="text-white">
         <thead>
-          <tr
-            style={{
-              backgroundColor: "rgba(255,255,255,0.1)",
-              borderTop: "0px",
-            }}
-          >
+          <tr>
             <th>Tipo</th>
             <th>Descricão</th>
             <th>Data</th>
             <th>Valor</th>
-            <th>Action</th>
+            <th>Ação</th>
           </tr>
         </thead>
-        <tbody style={{ backgroundColor: "rgba(255,255,255,0.2)" }}>
+        <tbody>
           {movimentacoes &&
             Object.keys(movimentacoes).map((movimentacao) => (
-              <tr key={movimentacao} style={{ borderTop: "hidden" }}>
+              <tr key={movimentacao}>
                 <td>
                   {movimentacoes[movimentacao].valor > 0 ? "Entrada" : "Saída"}
                 </td>
@@ -115,7 +111,7 @@ const Movimentacoes = () => {
                     variant="danger"
                     onClick={() => remover(movimentacao)}
                   >
-                    Delete
+                    Excluir
                   </Button>
                 </td>
               </tr>

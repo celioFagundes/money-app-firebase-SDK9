@@ -14,3 +14,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+thead{
+  background-color: rgba(255,255,255,0.2)
+}
+tbody {
+  background-color: rgba(255,255,255,0.1)
+}
+tbody tr{
+  border-top: hidden;
+}
+.link{
+  text-decoration: none;
+  color: #fff;
+}
+.mov-card{
+  background-color: rgba(255,255,255,0.2);
+  height: 140px;
+}
+.input-movimentacoes{
+  border: 0;
+  padding-left: 10px;
+  outline: none;
+}

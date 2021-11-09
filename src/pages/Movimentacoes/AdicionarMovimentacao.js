@@ -3,7 +3,9 @@ import { Button } from "react-bootstrap";
 import { AuthContext } from "../../auth";
 import { serverTimestamp } from "@firebase/database";
 import { Col, Row, Container } from "react-bootstrap";
+
 const AdicionarMovimentacao = ({ salvarNovaMovimentacao }) => {
+  
   const auth = useContext(AuthContext);
   const [movimentacaoValor, setMovimentacaoValor] = useState("");
   const [movimentacaoDescricao, setMovimentacaoDescricao] = useState("");
@@ -31,29 +33,24 @@ const AdicionarMovimentacao = ({ salvarNovaMovimentacao }) => {
     }
   };
   return (
-    <Container
-      className="text-white pt-3 pb-1 my-3  rounded"
-      style={{ backgroundColor: "rgba(255,255,255,0.2)", height: "140px" }}
-    >
+    <Container className="text-white pt-3 pb-1 my-3 rounded mov-card">
       <Row>
         <p className="text-white ">Nova Movimentação</p>
         <Col className="d-flex align-items-center justify-content-start pb-3">
           <input
             type="text"
-            maxLength = {30}
+            maxLength={30}
             value={movimentacaoDescricao}
             onChange={handleDescricao}
             placeholder="Descrição"
-            className="rounded me-2"
-            style={{ border: 0, paddingLeft: "10px" ,outline: "none" }}
+            className="input-movimentacoes rounded me-2 "
           />
           <input
             type="number"
             value={movimentacaoValor}
             onChange={handleValor}
             placeholder="Valor"
-            className="rounded"
-            style={{ border: 0, paddingLeft: "10px", outline: "none" }}
+            className=" input-momiventacoes rounded"
           />
         </Col>
       </Row>

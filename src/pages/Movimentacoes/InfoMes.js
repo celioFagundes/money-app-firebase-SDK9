@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useDatabase, useUpdateMes } from "../../database";
 import { AuthContext } from "../../auth";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 const InfoMes = ({ mes }) => {
   const auth = useContext(AuthContext);
@@ -26,7 +26,7 @@ const InfoMes = ({ mes }) => {
     return <p>Carregando ...</p>;
   }
   return (
-    <div className="text-white pt-3 pb-1 px-3 my-3 rounded" style={{ backgroundColor: "rgba(255,255,255,0.2)",height:'140px'}}>
+    <div className="text-white pt-3 pb-1 px-3 my-3 rounded mov-card">
       <Row>
         <Col>
           <p className="d-inline-block ">
@@ -40,15 +40,13 @@ const InfoMes = ({ mes }) => {
         </Col>
       </Row>
       <Row>
-        
         <Col>
           <p className="d-inline-block me-1">
             Previsão Entrada :
             {" R$ " + dataMes.previsao_entrada.toLocaleString("pt-br")}
           </p>
           <input
-            className ='rounded'
-            style = {{border:0, paddingLeft:'10px',outline: "none" }}
+            className="input-movimentacoes rounded"
             type="number"
             placeholder="Nova previsão"
             onBlur={alterarPrevisaoEntrada}
@@ -64,8 +62,7 @@ const InfoMes = ({ mes }) => {
             {" R$ " + dataMes.previsao_saida.toLocaleString("pt-br")}
           </p>
           <input
-          className ='rounded'
-          style = {{border:0, paddingLeft:'10px',outline: "none" }}
+            className="input-movimentacoes rounded"
             type="number"
             value={inputPrevSaida}
             onChange={(evt) => setInputPrevSaida(parseFloat(evt.target.value))}
@@ -74,7 +71,6 @@ const InfoMes = ({ mes }) => {
           />
         </Col>
       </Row>
-
     </div>
   );
 };

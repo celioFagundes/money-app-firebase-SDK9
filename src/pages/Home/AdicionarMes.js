@@ -1,10 +1,10 @@
-import React, { useState, useRef, useContext } from "react";
+import React, {useRef, useContext } from "react";
 import { Row, Button, Col, Alert } from "react-bootstrap";
 import { useDatabasePush } from "../../database";
 import { AuthContext } from "../../auth";
-import { Link } from "react-router-dom";
 import successIcon from "../../assets/success-icon.svg";
 import failureIcon from "../../assets/failure-icon.svg";
+
 const minAno = 2017;
 const maxAno = 2022;
 
@@ -19,15 +19,18 @@ const AdicionarMes = () => {
   for (let i = minAno; i <= maxAno; i++) {
     anos.push(i);
   }
+  
   for (let i = 1; i <= 12; i++) {
     meses.push(i);
   }
+
   const zeroPad = (num) => {
     if (num < 10) {
       return "0" + num;
     }
     return num;
   };
+
   const addNovoMes = () => {
     const mes = refAno.current.value + "-" + refMes.current.value;
     if (refAno.current.value !== "Ano" && refMes.current.value !== "Mes") {
@@ -40,7 +43,7 @@ const AdicionarMes = () => {
     }
   };
   return (
-    <div className ='my-2 mb-0 pb-0 rounded' >
+    <div className="my-2 mb-0 pb-0 rounded">
       <Row xs={1} sm={1} lg={4} md={3}>
         <Col xs lg="2">
           <h1 className="h4 text-white">Adicionar mês</h1>
@@ -79,7 +82,7 @@ const AdicionarMes = () => {
       </Row>
       <Row>
         <Col>
-          {saveStatus !== "" && (
+          {saveStatus !== "" && 
             <Alert
               variant={saveStatus === "Mes adicionado" ? "success " : "danger "}
               className="d-flex align-items-center py-2  col-md-2 mt-1"
@@ -92,7 +95,7 @@ const AdicionarMes = () => {
               />
               {saveStatus}
             </Alert>
-          )}
+          }
         </Col>
       </Row>
     </div>

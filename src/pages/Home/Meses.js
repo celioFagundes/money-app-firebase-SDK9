@@ -11,8 +11,8 @@ const Meses = () => {
   return (
     <Container>
       <Row>
-        <Table  hover className="mt-4 text-white" >
-          <thead style={{ backgroundColor: "rgba(255,255,255,0.1)" }}>
+        <Table hover className="mt-4 text-white">
+          <thead>
             <tr>
               <th>Mês</th>
               <th>Previsão entrada</th>
@@ -21,19 +21,16 @@ const Meses = () => {
               <th>Saída</th>
             </tr>
           </thead>
-          <tbody style={{ backgroundColor: "rgba(255,255,255,0.2)" }}>
+          <tbody>
             {data &&
               Object.keys(data).map((mes) => (
-                <tr key={mes} style={{ borderTop : 'hidden' }} >
-                  <td >
-                    <Link
-                      to={"/movimentacoes/" + mes}
-                      style={{ textDecoration: "none", color: "#fff" }}
-                    >
+                <tr key={mes}>
+                  <td>
+                    <Link to={"/movimentacoes/" + mes} className="link">
                       {mes}
                     </Link>
                   </td>
-                  <td >
+                  <td>
                     {"R$ " + data[mes].previsao_entrada.toLocaleString("pt-br")}
                   </td>
                   <td>{"R$ " + data[mes].entradas.toLocaleString("pt-br")}</td>

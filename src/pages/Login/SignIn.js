@@ -1,8 +1,7 @@
 import React, { useContext, useState } from "react";
-import { Navigate,Link } from "react-router-dom";
-import { Form, Container, Col, Row, Button ,Card} from "react-bootstrap";
+import { Navigate, Link } from "react-router-dom";
+import { Form, Container, Col, Row, Button, Card } from "react-bootstrap";
 import { AuthContext } from "../../auth";
-import CreateUser from "./CreateUser";
 
 const SignIn = () => {
   const auth = useContext(AuthContext);
@@ -20,9 +19,9 @@ const SignIn = () => {
   return (
     <Container classNameName=" pt-3">
       <Row>
-        <Col >
-          <Col className="mx-auto" lg = {3} md ={7} sm = {9}>
-            <Card className=" border-0 shadow rounded-3 my-5" >
+        <Col>
+          <Col className="mx-auto" lg={3} md={7} sm={9}>
+            <Card className=" border-0 shadow rounded-3 my-5">
               <Card.Body className=" p-4 p-sm-5">
                 <Card.Title className="text-center mb-5 fw-light fs-5 ">
                   Entrar
@@ -36,7 +35,6 @@ const SignIn = () => {
                       placeholder="name@example.com"
                       value={form.email}
                       onChange={onChange("email")}
-                      
                     />
                     <Form.Label for="floatingInput">Email </Form.Label>
                   </div>
@@ -62,13 +60,15 @@ const SignIn = () => {
                       Entrar
                     </Button>
                   </div>
-                  <p>Nao possui uma conta? <Link to='/criarconta'>Criar uma conta</Link></p>
+                  <p>
+                    Nao possui uma conta?{" "}
+                    <Link to="/criarconta">Criar uma conta</Link>
+                  </p>
                 </Form>
               </Card.Body>
             </Card>
           </Col>
         </Col>
-          
       </Row>
     </Container>
   );
