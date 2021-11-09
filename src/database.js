@@ -16,29 +16,30 @@ import {
 
 export const useDatabase = (endpoint) => {
   const [data, setData] = useState();
-  
-  const auth = useContext(AuthContext)
+
+  const auth = useContext(AuthContext);
   useEffect(() => {
     const database = getDatabase();
-    if(auth.user){
-    const userUID = auth.user.uid
-    const dbref = ref(database, userUID + endpoint);
-    onValue(dbref, (snapshot) => {
-      setData(snapshot.val());
-    })}
-  }, [endpoint,auth]);
+    if (auth.user) {
+      const userUID = auth.user.uid;
+      const dbref = ref(database, userUID + endpoint);
+      onValue(dbref, (snapshot) => {
+        setData(snapshot.val());
+      });
+    }
+  }, [endpoint, auth]);
 
   return data;
 };
-export const useDatabasePush = (endpoint) => {
+export const useMesPush = (endpoint) => {
   const [status, setStatus] = useState("");
   const database = getDatabase();
-  const auth = useContext(AuthContext)
+  const auth = useContext(AuthContext);
 
   const save = (mes, data) => {
-    const userUID = auth.user.uid
+    const userUID = auth.user.uid;
     const mesesRef = ref(database, userUID + endpoint);
-    const novoMesRef = ref(database, userUID + endpoint  + mes);
+    const novoMesRef = ref(database, userUID + endpoint + mes);
     const listaMeses = [];
     onValue(mesesRef, (snapshot) => {
       snapshot.forEach((childSnapshot) => {
@@ -59,11 +60,10 @@ export const useDatabasePush = (endpoint) => {
 export const useMovimentacoesPush = (endpoint) => {
   const [status, setStatus] = useState("");
   const database = getDatabase();
-  const auth = useContext(AuthContext)
-  
+  const auth = useContext(AuthContext);
 
   const save = (data) => {
-    const userUID = auth.user.uid
+    const userUID = auth.user.uid;
     const movRef = ref(database, userUID + endpoint);
     const novaMovRef = push(movRef);
     set(novaMovRef, data);
@@ -71,15 +71,14 @@ export const useMovimentacoesPush = (endpoint) => {
 
   return [status, save];
 };
-export const useDatabaseRemove = (endpoint) => {
+export const useDatabaseRemove = () => {
   const [status, setStatus] = useState("");
   const database = getDatabase();
-  const auth = useContext(AuthContext)
-  
+  const auth = useContext(AuthContext);
 
-  const removeItem = (id) => {
-    const userUID = auth.user.uid
-    const postListRef = ref(database, userUID + endpoint + "/" + id);
+  const removeItem = endpoint=> {
+    const userUID = auth.user.uid;
+    const postListRef = ref(database, userUID + endpoint );
     console.log(postListRef);
     const removeRef = remove(postListRef);
     console.log(removeRef);
@@ -91,14 +90,15 @@ export const useDatabaseRemove = (endpoint) => {
 export const useUpdateMes = (endpoint) => {
   const [status, setStatus] = useState("");
   const database = getDatabase();
-  const auth = useContext(AuthContext)
+  const auth = useContext(AuthContext);
 
   const updateMes = (mes, data) => {
-    if(auth.user){
-    const userUID = auth.user.uid
-    const novoMesRef = ref(database, userUID + endpoint + mes);
-    update(novoMesRef, data);
-    setStatus("Mes atualizado")}
+    if (auth.user) {
+      const userUID = auth.user.uid;
+      const novoMesRef = ref(database, userUID + endpoint + mes);
+      update(novoMesRef, data);
+      setStatus("Mes atualizado");
+    }
   };
 
   return [status, updateMes];

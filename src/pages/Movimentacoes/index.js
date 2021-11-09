@@ -22,16 +22,14 @@ const Movimentacoes = () => {
   const [saveStatus, salvarMovimentacao] = useMovimentacoesPush(
     "/movimentacoes/" + mesId
   );
-  const [removeStatus, removerMovimentacao] = useDatabaseRemove(
-    "/movimentacoes/" + mesId
-  );
+  const [removeStatus, removerMovimentacao] = useDatabaseRemove();
   const [updateStatus, updateMes] = useUpdateMes("/meses/");
 
   const salvarNovaMovimentacao = (dados) => {
     salvarMovimentacao(dados);
   };
   const remover = (id) => {
-    removerMovimentacao(id);
+    removerMovimentacao("/movimentacoes/" + mesId + '/' + id);
   };
 
   useEffect(() => {

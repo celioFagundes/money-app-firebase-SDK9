@@ -1,4 +1,3 @@
-
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
@@ -8,9 +7,8 @@ const firebaseConfig = {
   projectId: "mymoney2-10c8e",
   storageBucket: "mymoney2-10c8e.appspot.com",
   messagingSenderId: "686986088386",
-  appId: "1:686986088386:web:73dd2e05a8ad5a4b8dd05b"
+  appId: "1:686986088386:web:73dd2e05a8ad5a4b8dd05b",
 };
 
-
 const app = initializeApp(firebaseConfig);
-export default app
+export default app;

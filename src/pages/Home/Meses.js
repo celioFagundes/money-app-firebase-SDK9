@@ -1,13 +1,18 @@
 import React, { useContext } from "react";
-import { Row, Table, Container } from "react-bootstrap";
+import { Row, Table, Container,Button} from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useDatabase } from "../../database";
+import { useDatabase ,useDatabaseRemove} from "../../database";
 import { AuthContext } from "../../auth";
 
 const Meses = () => {
   const auth = useContext(AuthContext);
   const data = useDatabase("/meses/");
+  const [removeData, remover] = useDatabaseRemove()
 
+  const excluirMes = id =>{
+    remover('/meses/' + id)
+    remover('/movimentacoes/' + id)
+  }
   return (
     <Container>
       <Row>
@@ -19,6 +24,7 @@ const Meses = () => {
               <th>Entrada</th>
               <th>Previsão Saida</th>
               <th>Saída</th>
+              <th>Ação</th>
             </tr>
           </thead>
           <tbody>
@@ -38,6 +44,7 @@ const Meses = () => {
                     {"R$ " + data[mes].previsao_saida.toLocaleString("pt-br")}
                   </td>
                   <td>{"R$ " + data[mes].saidas.toLocaleString("pt-br")}</td>
+                  <td><Button onClick = {() => excluirMes(mes)}variant = 'danger' size = {'sm'}>Excluir</Button></td>
                 </tr>
               ))}
           </tbody>

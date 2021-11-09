@@ -1,6 +1,6 @@
 import React, {useRef, useContext } from "react";
 import { Row, Button, Col, Alert } from "react-bootstrap";
-import { useDatabasePush } from "../../database";
+import { useMesPush } from "../../database";
 import { AuthContext } from "../../auth";
 import successIcon from "../../assets/success-icon.svg";
 import failureIcon from "../../assets/failure-icon.svg";
@@ -14,7 +14,7 @@ const AdicionarMes = () => {
   const refMes = useRef();
   const anos = [];
   const meses = [];
-  const [saveStatus, salvarMes] = useDatabasePush("/meses/");
+  const [saveStatus, salvarMes] = useMesPush("/meses/");
 
   for (let i = minAno; i <= maxAno; i++) {
     anos.push(i);
