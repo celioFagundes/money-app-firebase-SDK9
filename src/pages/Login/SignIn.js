@@ -17,7 +17,7 @@ const SignIn = () => {
     return <Navigate to="/" />;
   }
   return (
-    <Container classNameName=" pt-3">
+    <Container className=" pt-3">
       <Row>
         <Col>
           <Col className="mx-auto" lg={3} md={7} sm={9}>
@@ -36,7 +36,7 @@ const SignIn = () => {
                       value={form.email}
                       onChange={onChange("email")}
                     />
-                    <Form.Label for="floatingInput">Email </Form.Label>
+                    <Form.Label htmlFor="floatingInput">Email </Form.Label>
                   </div>
                   <div className="form-floating mb-3">
                     <Form.Control
@@ -47,7 +47,7 @@ const SignIn = () => {
                       value={form.password}
                       onChange={onChange("password")}
                     />
-                    <Form.Label for="floatingPassword">Senha</Form.Label>
+                    <Form.Label htmlFor="floatingPassword">Senha</Form.Label>
                   </div>
                   <div className="d-grid">
                     <Button
@@ -61,7 +61,7 @@ const SignIn = () => {
                     </Button>
                   </div>
                   <p>
-                    Nao possui uma conta?{" "}
+                    Não possui uma conta?{" "}
                     <Link to="/criarconta">Criar uma conta</Link>
                   </p>
                 </Form>

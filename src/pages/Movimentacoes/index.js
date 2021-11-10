@@ -81,7 +81,7 @@ const Movimentacoes = () => {
         <thead>
           <tr>
             <th>Tipo</th>
-            <th>Descricão</th>
+            <th>Descrição</th>
             <th>Data</th>
             <th>Valor</th>
             <th>Ação</th>
