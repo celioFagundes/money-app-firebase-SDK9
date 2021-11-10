@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# My-Money app criado com ReactJs e Firebase SDK9
+![my-money-home](https://user-images.githubusercontent.com/77676047/141122141-b1b5947b-31f2-446b-acbc-65b9ce481bc0.png)
+![my-money-mov](https://user-images.githubusercontent.com/77676047/141122156-a17409c4-20e9-497b-b765-f818c2b48f0c.png)
+![my-money-entrar (2)](https://user-images.githubusercontent.com/77676047/141122169-81ddaba9-02ff-4045-9d2d-cf633041f19e.png)
+![my-money-criar](https://user-images.githubusercontent.com/77676047/141122179-f08614b0-8cf9-4983-8d8e-ea20b9370648.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Sobre
+  Project do curso Devpleno ReactJS 
 
-In the project directory, you can run:
+### Funcionalidades
+- Criar, deletar e editar um mes, criando movimentações e previsoes de entrada e saida
+- Sistema de login e autenticação utilizando Firebase authentication
+- Banco de dados utilizando Firebase Real time Database
+- Comunicação com o banco de dados utilizandoa SDK9 modular do firebase
+- Context API usada para validação do usuario
+- Sistema de login e criação de um novo usuario
+- Design criado com Bootstrap e React Bootstrap
 
-### `yarn start`
+## Pre requisitos
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- NodeJs
+- Yarn ``npm install --global yarn``
+- React ``npm install -g create-react-app ``
+- Bootstrap and React-bootstrap``npm install react-bootstrap@next bootstrap@5.1.1
+- Firebase ``npm install firebase``
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Instalando
 
-### `yarn test`
+Clone este repositorio
+- `` git clone https://github.com/celioFagundes/money-app-firebase-SDK9.git``
+- `` cd money-app-firebase-SDK9``
+- `` npm install ``
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Iniciar
+- Yarn start
